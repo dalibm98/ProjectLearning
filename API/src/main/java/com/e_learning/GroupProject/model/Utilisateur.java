@@ -32,7 +32,7 @@ public class Utilisateur implements Serializable {
     private Date naissance;
     @Column(name = "email")
     private String email;
-    @Column(columnDefinition = "VARCHAR(8) CHECK (LENGTH(numero) = 8)", nullable = false)
+
     private int telephone;
     @Column(name="pays")
     private String pays;
