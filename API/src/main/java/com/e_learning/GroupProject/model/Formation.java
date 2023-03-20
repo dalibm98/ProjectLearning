@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,6 +35,6 @@ public class Formation {
            joinColumns = { @JoinColumn(name = "formation_id") },
            inverseJoinColumns = { @JoinColumn(name = "etudiant_id") }
    )
-    protected Set<Etudiant>etudiants=new HashSet<>();
+    protected List<Etudiant> etudiants;
 
 }

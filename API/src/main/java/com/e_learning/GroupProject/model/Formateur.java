@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -24,6 +25,6 @@ public class Formateur extends Utilisateur {
             joinColumns = { @JoinColumn(name = "formateur_id") },
             inverseJoinColumns = { @JoinColumn(name = "formation_id") }
     )
-    protected Set<Formation> formations=new HashSet<>();
+    protected List<Formation> formations;
 
 }

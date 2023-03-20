@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CollectionId;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,6 +22,6 @@ public class Etudiant extends Utilisateur{
     @Column(name = "diplome")
     private String diplome;
     @ManyToMany(mappedBy = "etudiants")
-    protected Set<Formation> formations=new HashSet<>();
+    protected List<Formation> formations;
 
 }

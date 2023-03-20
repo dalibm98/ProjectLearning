@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,4 +24,6 @@ public class Fichiers {
     private Date create_le ;
     @Column(name = "cree_Par")
     private String cree_par;
+    @ManyToMany(mappedBy = "fichiers")
+    protected List<Utilisateur> users;
 }

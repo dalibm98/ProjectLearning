@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 import static jakarta.persistence.TemporalType.TIMESTAMP;
@@ -20,6 +21,7 @@ import static jakarta.persistence.TemporalType.TIMESTAMP;
 public class Utilisateur implements Serializable {
     @Id
     @GeneratedValue(strategy= IDENTITY)
+
     private int id_user;
     @Column(name = "nom")
     private String nom;
@@ -40,6 +42,11 @@ public class Utilisateur implements Serializable {
     private String pseudo;
     @Column(name = "password")
     private String password;
+    @ManyToMany(cascade = CascadeType.ALL)
+    protected List<Fichiers> fichiers;
+    @ManyToMany(cascade = CascadeType.ALL)
+
+    protected List<Reclamation>reclamations;
 
 
 
